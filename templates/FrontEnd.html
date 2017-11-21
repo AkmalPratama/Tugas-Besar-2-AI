@@ -1,0 +1,257 @@
+<html>
+<head>
+    <title>Income Prediction</title>
+    <style>
+        html {
+            background-color: white;
+        }
+        body {
+            width: 32%;
+            padding-top: 20px;
+            padding-right: 10px;
+            padding-bottom: 9%;
+            padding-left: 10px;
+            background-color: #8bbd3c;
+            border: 10px solid #02702c;
+            border-radius: 70px;
+            margin-left: 33%;
+        }
+        h1 {
+            font-family: sans-serif;
+            text-align: center;
+            padding-bottom: 10px;
+            font-size: 40px;
+            color: #02702c;
+        }
+        td {
+            font-family: Verdana;
+            font-size: 20px;
+            color: #02702c;
+            margin-bottom: 30px;
+        }
+        select, input {
+            height: 26px;
+            width: 94%;
+            border: 1px solid green;
+        }
+        .button {
+            height: 50px;
+            width: 130px;
+            margin-top: 5px;
+            background-color: #82d800;
+            border: 2px solid black;
+            border-radius: 10px;
+            color: #333333;
+            padding: 7px 7px;
+            text-align: center;
+            font-size: 20px;
+            font-family: cursive;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #9edb3d;
+        }
+        td {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+
+    </style>
+</head>
+
+<body>
+<h1>Yearly Income Prediction</h1>
+<form action = "http://localhost:5000/result" method = "post">
+    <table>
+        <tr>
+            <td>Enter Age:</td>
+            <td><input type = "age" name = "age" /></td>
+        </tr>
+
+        <tr>
+            <td>Choose Workclass : </td>
+            <td>
+                <select name="workclass">
+                    <option value=" Private">Private</option>
+                    <option value=" Self-emp-not-inc">Self-emp-not-inc</option>
+                    <option value=" Self-emp-inc">Self-emp-inc</option>
+                    <option value=" Federal-gov">Federal-gov</option>
+                    <option value=" Local-gov">Local-gov</option>
+                    <option value=" State-gov">State-gov</option>
+                    <option value=" Without-pay">Without-pay</option>
+                    <option value=" Never-worked">Never-worked</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Enter Final Weight:</td>
+            <td><input type = "fnlwgt" name = "fnlwgt" /></td>
+        </tr>
+
+        <tr>
+            <td>Choose Education : </td>
+            <td><select name="education">
+                <option value=" Bachelors">Bachelors</option>
+                <option value=" Some-college">Some-college</option>
+                <option value=" 11th">11th</option>
+                <option value=" HS-grad">HS-grad</option>
+                <option value=" Prof-school">Prof-school</option>
+                <option value=" Assoc-acdm">Assoc-acdm</option>
+                <option value=" Assoc-voc">Assoc-voc</option>
+                <option value=" 9th">9th</option>
+                <option value=" 7th-8th">7th-8th</option>
+                <option value=" 12th">12th</option>
+                <option value=" Masters">Masters</option>
+                <option value=" 1st-4th">1st-4th</option>
+                <option value=" 10th">10th</option>
+                <option value=" Doctorate">Doctorate</option>
+                <option value=" 5th-6th">5th-6th</option>
+                <option value=" Preschool">Preschool</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td>Enter Education Number:</td>
+            <td><input type = "education-num" name = "education-num" /></td>
+        </tr>
+
+        <tr>
+            <td>Choose Marital Status:</td>
+            <td><select name="marital-status">
+                <option value=" Married-civ-spouse">Married-civ-spouse</option>
+                <option value=" Divorced">Divorced</option>
+                <option value=" Never-married">Never-married</option>
+                <option value=" Separated">Separated</option>
+                <option value=" Widowed">Widowed</option>
+                <option value=" Married-spouse-absent">Married-spouse-absent</option>
+                <option value=" Married-AF-spouse">Married-AF-spouse</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td>Choose Occupation:</td>
+            <td><select name="occupation">
+                <option value=" Tech-support">Tech-support</option>
+                <option value=" Craft-repair">Craft-repair</option>
+                <option value=" Other-service">Other-service</option>
+                <option value=" Sales">Sales</option>
+                <option value=" Exec-managerial">Exec-managerial</option>
+                <option value=" Prof-specialty">Prof-specialty</option>
+                <option value=" Handlers-cleaners">Handlers-cleaners</option>
+                <option value=" Machine-op-inspct">Machine-op-inspct</option>
+                <option value=" Adm-clerical">Adm-clerical</option>
+                <option value=" Farming-fishing">Farming-fishing</option>
+                <option value=" Transport-moving">Transport-moving</option>
+                <option value=" Priv-house-serv">Priv-house-serv</option>
+                <option value=" Protective-serv">Protective-serv</option>
+                <option value=" Armed-Forces">Armed-Forces</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td>Choose Relationship:</td>
+            <td><select name="relationship">
+                <option value=" Wife">Wife</option>
+                <option value=" Own-child">Own-child</option>
+                <option value=" Husband">Husband</option>
+                <option value=" Not-in-family">Not-in-family</option>
+                <option value=" Other-relative">Other-relative</option>
+                <option value=" Unmarried">Unmarried</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td>Choose Race:</td>
+            <td><select name="race">
+                <option value=" White">White</option>
+                <option value=" Asian-Pac-Islander">Asian-Pac-Islander</option>
+                <option value=" Amer-Indian-Eskimo">Amer-Indian-Eskimo</option>
+                <option value=" Other">Other</option>
+                <option value=" Black">Black</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td>Choose Sex:</td>
+            <td><select name="sex">
+                <option value=" Female">Female</option>
+                <option value=" Male">Male</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td>Enter Capital-Gain:</td>
+            <td><input type = "capital-gain" name = "capital-gain" /></td>
+        </tr>
+
+        <tr>
+            <td>Enter Capital-Loss:</td>
+            <td><input type = "capital-loss" name = "capital-loss" /></td>
+        </tr>
+
+        <tr>
+            <td>Enter Hours-Per-Week:</td>
+            <td><input type = "hours-per-week" name = "hours-per-week" /></td>
+        </tr>
+
+        <tr>
+            <td>Choose Native Country:</td>
+            <td><select name="native-country">
+                <option value=" United-States">United-States</option>
+                <option value=" Cambodia">Cambodia</option>
+                <option value=" England">England</option>
+                <option value=" Puerto-Rico">Puerto-Rico</option>
+                <option value=" Canada">Canada</option>
+                <option value=" Germany">Germany</option>
+                <option value=" Outlying-US(Guam-USVI-etc)">Outlying-US(Guam-USVI-etc)</option>
+                <option value=" India">India</option>
+                <option value=" Japan">Japan</option>
+                <option value=" Greece">Greece</option>
+                <option value=" South">South</option>
+                <option value=" China">China</option>
+                <option value=" Cuba">Cuba</option>
+                <option value=" Iran">Iran</option>
+                <option value=" Honduras">Honduras</option>
+                <option value=" Philippines">Philippines</option>
+                <option value=" Italy">Italy</option>
+                <option value=" Poland">Poland</option>
+                <option value=" Jamaica">Jamaica</option>
+                <option value=" Vietnam">Vietnam</option>
+                <option value=" Mexico">Mexico</option>
+                <option value=" Portugal">Portugal</option>
+                <option value=" Ireland">Ireland</option>
+                <option value=" France">France</option>
+                <option value=" Dominican-Republic">Dominican-Republic</option>
+                <option value=" Laos">Laos</option>
+                <option value=" Ecuador">Ecuador</option>
+                <option value=" Taiwan">Taiwan</option>
+                <option value=" Haiti">Haiti</option>
+                <option value=" Columbia">Columbia</option>
+                <option value=" Hungary">Hungary</option>
+                <option value=" Guatemala">Guatemala</option>
+                <option value=" Nicaragua">Nicaragua</option>
+                <option value=" Scotland">Scotland</option>
+                <option value=" Thailand">Thailand</option>
+                <option value=" Yugoslavia">Yugoslavia</option>
+                <option value=" El-Salvador">El-Salvador</option>
+                <option value=" Trinidad&Tobago">TrinidadAndTobago</option>
+                <option value=" Peru">Peru</option>
+                <option value=" Hong">Hong</option>
+                <option value=" Holand-Netherlands">Holand-Netherlands</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td><input class="button" type = "submit" value = "Submit!" style="margin-top: 30px"></td>
+        </tr>
+
+    </table>
+</form>
+
+</body>
+</html>
