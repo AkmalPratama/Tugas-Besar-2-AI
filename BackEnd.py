@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('FrontEnd.html')
+  return render_template('index.html')
 
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
@@ -62,22 +62,22 @@ def result():
   list(le14.classes_)
   cidata[:,14] = le14.transform(cidata[:,14])
 
-  age = request.form['age']
-  workclass = request.form['workclass']
-  fnlwgt = request.form['fnlwgt']
-  education = request.form['education']
-  educationnum = request.form['education-num']
-  maritalstatus = request.form['marital-status']
-  occupation = request.form['occupation']
-  relationship = request.form['relationship']
-  race = request.form['race']
-  sex = request.form['sex']
-  capitalgain = request.form['capital-gain']
-  capitalloss = request.form['capital-loss']
-  hoursperweek = request.form['hours-per-week']
-  nativecountry = request.form['native-country']
+  age = ' '+request.form['age']
+  workclass = ' '+request.form['workclass']
+  fnlwgt = ' '+request.form['fnlwgt']
+  education = ' '+request.form['education']
+  educationnum = ' '+request.form['education-num']
+  maritalstatus = ' '+request.form['marital-status']
+  occupation = ' '+request.form['occupation']
+  relationship = ' '+request.form['relationship']
+  race = ' '+request.form['race']
+  sex = ' '+request.form['sex']
+  capitalgain = ' '+request.form['capital-gain']
+  capitalloss = ' '+request.form['capital-loss']
+  hoursperweek = ' '+request.form['hours-per-week']
+  nativecountry = ' '+request.form['native-country']
 
-  appended = ' '+age+','+workclass+','+' '+fnlwgt+','+education+','+' '+educationnum+','+maritalstatus+','+occupation+','+relationship+','+race+','+sex+','+' '+capitalgain+','+' '+capitalloss+','+' '+hoursperweek+','+nativecountry
+  appended = age+','+workclass+','+fnlwgt+','+education+','+educationnum+','+maritalstatus+','+occupation+','+relationship+','+race+','+sex+','+capitalgain+','+capitalloss+','+hoursperweek+','+nativecountry
 
   import sys
   if sys.version_info[0] < 3:
@@ -111,7 +111,7 @@ def result():
   pred = loaded_model.predict(cidata)
   predict = le14.inverse_transform(pred)
   predstring = predict[0]
-  return render_template("result.html",result = predstring)
+  return render_template("index.html",result = predstring)
 
 
 if __name__ == '__main__':
