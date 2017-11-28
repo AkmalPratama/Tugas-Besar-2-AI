@@ -12,7 +12,7 @@
   <div class="jumbotron">
   <h3>Prediction result: {{ result }}</h3>
   </div>
-  {% endif %}
+  {% end if %}
   
   <h4 class="text-center">Enter the personal data for the individual whose yearly income you want to predict in the fields below.</h4>
   <form class="form-horizontal" action = "http://localhost:5000/result" method = "post">
@@ -21,13 +21,13 @@
   	<div class="form-group">
   	  <label class="col-sm-2 control-label" for="age">Age:</label>
       <div class="col-sm-4">
-        <input required class="form-control" id="age" name="age" type="number" placeholder="Please fill in this field" min="1"/>
+        <input class="form-control" id="age" name="age" type="number" placeholder="(Empty value)"/>
       </div>
       
       <label class="col-sm-2 control-label" for="workclass">Workclass:</label>
       <div class="col-sm-4">
-        <select required class="form-control" id="workclass" name="workclass">
-          <option value="" selected disabled>Please select an option</option>
+        <select class="form-control" id="workclass" name="workclass">
+          <option value="" selected>(Empty value)</option>
           <option value="Private">Private</option>
           <option value="Self-emp-not-inc">Self-emp-not-inc</option>
           <option value="Self-emp-inc">Self-emp-inc</option>
@@ -43,13 +43,13 @@
     <div class="form-group">
   	  <label class="col-sm-2 control-label" for="fnlwgt">Final weight:</label>
       <div class="col-sm-4">
-        <input class="form-control" id="fnlwgt" name="fnlwgt" type="number" placeholder="Please fill in this field" min="1"/>
+        <input class="form-control" id="fnlwgt" name="fnlwgt" type="number" placeholder="(Empty value)"/>
       </div>
       
       <label class="col-sm-2 control-label" for="education">Education:</label>
       <div class="col-sm-4">
-        <select required class="form-control" id="education" name="education">
-          <option value="" selected disabled>Please select an option</option>
+        <select class="form-control" id="education" name="education">
+          <option value="" selected>(Empty value)</option>
           <option value="Bachelors">Bachelors</option>
           <option value="Some-college">Some-college</option>
           <option value="11th">11th</option>
@@ -73,13 +73,13 @@
     <div class="form-group">
   	  <label class="col-sm-2 control-label" for="education-num">Education number:</label>
       <div class="col-sm-4">
-        <input class="form-control" id="education-num" name="education-num" type="number" placeholder="Please fill in this field" min="1"/>
+        <input class="form-control" id="education-num" name="education-num" type="number" placeholder="(Empty value)"/>
       </div>
       
       <label class="col-sm-2 control-label" for="marital-status">Marital status:</label>
       <div class="col-sm-4">
-        <select required class="form-control" id="marital-status" name="marital-status">
-          <option value="" selected disabled>Please select an option</option>
+        <select class="form-control" id="marital-status" name="marital-status">
+          <option value="" selected>(Empty value)</option>
           <option value="Married-civ-spouse">Married-civ-spouse</option>
           <option value="Divorced">Divorced</option>
           <option value="Never-married">Never-married</option>
@@ -94,8 +94,8 @@
     <div class="form-group">
       <label class="col-sm-2 control-label" for="occupation">Occupation:</label>
       <div class="col-sm-4">
-        <select required class="form-control" id="occcupation" name="occupation">
-          <option value="" selected disabled>Please select an option</option>
+        <select class="form-control" id="occcupation" name="occupation">
+          <option value="" selected>(Empty value)</option>
           <option value="Tech-support">Tech-support</option>
           <option value="Craft-repair">Craft-repair</option>
           <option value="Other-service">Other-service</option>
@@ -115,8 +115,8 @@
       
       <label class="col-sm-2 control-label" for="relationship">Relationship:</label>
       <div class="col-sm-4">
-        <select required class="form-control" id="relationship" name="relationship">
-          <option value="" selected disabled>Please select an option</option>
+        <select class="form-control" id="relationship" name="relationship">
+          <option value="" selected>(Empty value)</option>
           <option value="Wife">Wife</option>
           <option value="Own-child">Own-child</option>
           <option value="Husband">Husband</option>
@@ -130,8 +130,8 @@
     <div class="form-group">
       <label class="col-sm-2 control-label" for="race">Race:</label>
       <div class="col-sm-4">
-        <select required class="form-control" id="race" name="race">
-          <option value="" selected disabled>Please select an option</option>
+        <select class="form-control" id="race" name="race">
+          <option value="" selected>(Empty value)</option>
           <option value="White">White</option>
           <option value="Asian-Pac-Islander">Asian-Pac-Islander</option>
           <option value="Amer-Indian-Eskimo">Amer-Indian-Eskimo</option>
@@ -142,8 +142,8 @@
       
       <label class="col-sm-2 control-label" for="sex">Sex:</label>
       <div class="col-sm-4">
-        <select required class="form-control" id="sex" name="sex">
-          <option value="" selected disabled>Please select an option</option>
+        <select class="form-control" id="sex" name="sex">
+          <option value="" selected>(Empty value)</option>
           <option value="Female">Female</option>
           <option value="Male">Male</option>
         </select>
@@ -153,25 +153,25 @@
     <div class="form-group">
   	  <label class="col-sm-2 control-label" for="capital-gain">Capital gain:</label>
       <div class="col-sm-4">
-        <input required class="form-control" id="capital-gain" name="capital-gain" type="number" placeholder="Please fill in this field" min="1"/>
+        <input class="form-control" id="capital-gain" name="capital-gain" type="number" placeholder="(Empty value)"/>
       </div>
       
       <label class="col-sm-2 control-label" for="capital-loss">Capital loss:</label>
       <div class="col-sm-4">
-        <input required class="form-control" id="capital-loss" name="capital-loss" type="number" placeholder="Please fill in this field" min="1"/>
+        <input class="form-control" id="capital-loss" name="capital-loss" type="number" placeholder="(Empty value)"/>
       </div>
   	</div>
     
     <div class="form-group">
   	  <label class="col-sm-2 control-label" for="hours-per-week">Hours per week:</label>
       <div class="col-sm-4">
-        <input required class="form-control" id="hours-per-week" name="hours-per-week" type="number" placeholder="Please fill in this field" min="1"/>
+        <input class="form-control" id="hours-per-week" name="hours-per-week" type="number" placeholder="(Empty value)"/>
       </div>
       
       <label class="col-sm-2 control-label" for="native-country">Native country:</label>
       <div class="col-sm-4">
-        <select required class="form-control" id="native-country" name="native-country">
-          <option value="" selected disabled>Please select an option</option>
+        <select class="form-control" id="native-country" name="native-country">
+          <option value="" selected>(Empty value)</option>
           <option value="United-States">United-States</option>
           <option value="Cambodia">Cambodia</option>
           <option value="England">England</option>
