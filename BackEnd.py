@@ -11,7 +11,7 @@ def result():
   import pandas as pd
   from sklearn import preprocessing
   attributeName = ["age", "workclass", "fnlwgt", "education", "education-num", "marital-status", "occupation","relationship", "race", "sex", "capital-gain", "capital-loss", "hours-per-week", "native-country", "salary"]
-  data=pd.read_csv("D:/CencusIncome.data.txt", names=attributeName)
+  data=pd.read_csv("CencusIncome.data.txt", names=attributeName)
 	# GANTI PATHNYA ^^^^^^^^^^^^^^^^^^^^^
 
   capitalgainmean = data["capital-gain"].mean()
