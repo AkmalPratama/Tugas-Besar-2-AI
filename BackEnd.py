@@ -37,9 +37,7 @@ def result():
   data["race"] = data[["race"]].replace(' ?', " " + data["race"].mode()[0])
   data["sex"] = data[["sex"]].replace(' ?', " " + data["sex"].mode()[0])
 
-
-
-  cidata = data.as_matrix()
+  cidata = data.values
 
   le1 = preprocessing.LabelEncoder()
   le1.fit(cidata[:,1])
@@ -110,7 +108,7 @@ def result():
   else:
     hoursperweek = ' '+request.form['hours-per-week']
 
-  
+
   appended = workclass+','+education+','+maritalstatus+','+occupation+','+relationship+','+race+','+sex+','+capitalgain+','+capitalloss+','+hoursperweek
 
   import sys
@@ -130,8 +128,7 @@ def result():
   data["race"] = data[["race"]].replace(' ?',  racemode)
   data["sex"] = data[["sex"]].replace(' ?', sexmode)
 
-
-  cidata = data.as_matrix()
+  cidata = data.values
   cidata[:,0] = le1.transform(cidata[:,0])
 
   cidata[:,1] = le3.transform(cidata[:,1])
@@ -146,10 +143,10 @@ def result():
 
   cidata[:,6] = le9.transform(cidata[:,6])
 
-  from sklearn.externals import joblib
-  filename = 'clf.sav'
   #Load model
-  loaded_model = joblib.load(filename)
+  import pickle
+  loaded_model = pickle.load(open( "dumpfile.p", "rb"))
+  
   pred = loaded_model.predict(cidata)
   predict = le14.inverse_transform(pred)
   predstring = predict[0]
