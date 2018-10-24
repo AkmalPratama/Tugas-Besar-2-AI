@@ -43,7 +43,7 @@ Just fill the input form. You may or may not fill all the attribute.
 
 Deployed app on Heroku
 
-* [Node web server](https://income-predictor.herokuapp.com/)
+* [Income predictor](https://income-predictor.herokuapp.com/)
 
 ## Authors
 
